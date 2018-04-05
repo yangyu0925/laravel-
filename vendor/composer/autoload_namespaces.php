@@ -5,6 +5,9 @@
 $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
+/**
+ * 符合PSR0标准的自动加载文件，存放着顶级命名空间与文件的映射；
+ */
 return array(
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
     'Parsedown' => array($vendorDir . '/erusev/parsedown'),

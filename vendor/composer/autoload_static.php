@@ -4,6 +4,11 @@
 
 namespace Composer\Autoload;
 
+/**
+ * 顶级命名空间初始化类，用于给核心类初始化顶级命名空间。
+ * Class ComposerStaticInit329d1f5391b3354e544241c704a484ae
+ * @package Composer\Autoload
+ */
 class ComposerStaticInit329d1f5391b3354e544241c704a484ae
 {
     public static $files = array (

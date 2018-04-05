@@ -13,6 +13,8 @@
 namespace Composer\Autoload;
 
 /**
+ * composer加载类。composer自动加载功能的核心类。
+ *
  * ClassLoader implements a PSR-0, PSR-4 and classmap class loader.
  *
  *     $loader = new \Composer\Autoload\ClassLoader();
