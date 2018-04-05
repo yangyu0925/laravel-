@@ -343,6 +343,7 @@ class ClassLoader
         if ($this->classMapAuthoritative || isset($this->missingClasses[$class])) {
             return false;
         }
+
         if (null !== $this->apcuPrefix) {
             $file = apcu_fetch($this->apcuPrefix.$class, $hit);
             if ($hit) {
@@ -363,6 +364,7 @@ class ClassLoader
 
         if (false === $file) {
             // Remember that this class does not exist.
+            //记住这个类不在
             $this->missingClasses[$class] = true;
         }
 
@@ -377,9 +379,11 @@ class ClassLoader
         $first = $class[0];
         if (isset($this->prefixLengthsPsr4[$first])) {
             $subPath = $class;
+
             while (false !== $lastPos = strrpos($subPath, '\\')) {
                 $subPath = substr($subPath, 0, $lastPos);
                 $search = $subPath.'\\';
+
                 if (isset($this->prefixDirsPsr4[$search])) {
                     $pathEnd = DIRECTORY_SEPARATOR . substr($logicalPathPsr4, $lastPos + 1);
                     foreach ($this->prefixDirsPsr4[$search] as $dir) {
