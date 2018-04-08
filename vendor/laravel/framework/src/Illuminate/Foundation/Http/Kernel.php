@@ -111,6 +111,7 @@ class Kernel implements KernelContract
     public function handle($request)
     {
         try {
+            //enableHttpMethodParameterOverride函数是允许在表单中使用delete、put等类型的请求
             $request->enableHttpMethodParameterOverride();
 
             $response = $this->sendRequestThroughRouter($request);

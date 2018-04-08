@@ -60,8 +60,10 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 |
 */
 
+//“制造”出Http请求的内核
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
+//laravel里面所有功能服务的注册加载，乃至Http请求的构造与传递都是这一句的功劳
 $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );

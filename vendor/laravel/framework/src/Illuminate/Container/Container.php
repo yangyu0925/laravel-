@@ -205,6 +205,7 @@ class Container implements ArrayAccess, ContainerContract
 
     /**
      * Register a binding with the container.
+     * 用容器注册绑定
      *
      * @param  string  $abstract
      * @param  \Closure|string|null  $concrete
@@ -235,6 +236,7 @@ class Container implements ArrayAccess, ContainerContract
         // rebound listener so that any objects which have already gotten resolved
         // can have their copy of the object updated via the listener callbacks.
         if ($this->resolved($abstract)) {
+
             $this->rebound($abstract);
         }
     }
